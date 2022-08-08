@@ -8,84 +8,97 @@
     <meta name="theme-color" content="rgb(37, 99 ,235,0)">
     <link rel="stylesheet" href="./css/bootstrap.min.css">
 </head>
+<style>
+    .centrar_app{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+    }
+</style>
 <body>
-    <div class="container pt-4">
-        <div class="row">
-            <div class="col">
-                <div class="row d-flex align-items-center justify-content-center">
-                    <h1 id="costo"  class="text-primary font-weight-bold" style="font-size: 70px;">
-                        0
-                    </h1>
-                    <h1 id="costo"  class="text-primary font-weight-bold" style="font-size: 70px;">
-                        &#36;
-                    </h1>
+    <div class="centrar_app">
+
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="row d-flex align-items-center justify-content-center">
+                        <h1 id="costo"  class="text-primary font-weight-bold" style="font-size: 70px;">
+                            0
+                        </h1>
+                        <h1 id="costo"  class="text-primary font-weight-bold" style="font-size: 70px;">
+                            &#36;
+                        </h1>
+                    </div>
+                </div>
+            </div>
+            <div class="row pt-1">
+                <div class="col">
+                    <div class="row d-flex align-items-center justify-content-center">
+                        <p class="text-muted">Gb</p>
+                    </div>                
+                    <div class="row d-flex align-items-center justify-content-center">
+                        <h3 id="ram" class="text-muted pr-1">1</h3>
+                        <h3 class="text-primary">RAM</h3>
+                    </div>
+                    <div class="row d-flex align-items-center justify-content-center">
+                        <div class="btn-group btn-group-lg" role="group" aria-label="Basic example">
+                            <button onclick="restar_ram()" type="button" class="btn btn-primary">-</button>
+                            <button onclick="sumar_ram()" type="button" class="btn btn-primary">+</button>
+                          </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="row d-flex align-items-center justify-content-center">
+                        <p class="text-muted">Unidad</p>
+                    </div>
+                    <div class="row d-flex align-items-center justify-content-center">
+                        <h3 id="cpu" class="text-muted pr-1">1</h3>
+                        <h3 class="text-primary">CPU</h3>
+                    </div>
+                    <div class="row d-flex align-items-center justify-content-center">
+                        <div class="btn-group btn-group-lg" role="group" aria-label="Basic example">
+                            <button onclick="restar_cpu()" type="button" class="btn btn-primary">-</button>
+                            <button onclick="sumar_cpu()" type="button" class="btn btn-primary">+</button>
+                          </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row pt-5">
+                <div class="col">
+                    <div class="row d-flex align-items-center justify-content-center">
+                        <p class="text-muted">Gb</p>
+                    </div>                
+                    <div class="row d-flex align-items-center justify-content-center">
+                        <h3 id="ssd" class="text-muted pr-1">20</h3>  
+                        <h3 class="text-primary">SSD</h3>
+                    </div>
+                    <div class="row d-flex align-items-center justify-content-center">
+                        <div class="btn-group btn-group-lg" role="group" aria-label="Basic example">
+                            <button onclick="restar_ssd()" type="button" class="btn btn-primary">-</button>
+                            <button onclick="sumar_ssd()" type="button" class="btn btn-primary">+</button>
+                          </div>
+                    </div>
+                </div>
+                <div class="col">  
+                    <div class="row d-flex align-items-center justify-content-center">
+                        <p class="text-muted">24/h</p>
+                    </div>    
+                    <div class="row d-flex align-items-center justify-content-center">
+                        <h3 id="dias" class="text-muted pr-1">30</h3>
+                        <h3 class="text-primary">DIAS</h3>
+                    </div>
+                    <div class="row d-flex align-items-center justify-content-center">
+                        <div class="btn-group btn-group-lg" role="group" aria-label="Basic example">
+                            <button onclick="restar_dias()" type="button" class="btn btn-primary">-</button>
+                            <button onclick="sumar_dias()" type="button" class="btn btn-primary">+</button>
+                          </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="row pt-1">
-            <div class="col">
-                <div class="row d-flex align-items-center justify-content-center">
-                    <p class="text-muted">Gb</p>
-                </div>                
-                <div class="row d-flex align-items-center justify-content-center">
-                    <h3 id="ram" class="text-muted pr-1">1</h3>
-                    <h3 class="text-primary">RAM</h3>
-                </div>
-                <div class="row d-flex align-items-center justify-content-center">
-                    <div class="btn-group btn-group-lg" role="group" aria-label="Basic example">
-                        <button onclick="restar_ram()" type="button" class="btn btn-primary">-</button>
-                        <button onclick="sumar_ram()" type="button" class="btn btn-primary">+</button>
-                      </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="row d-flex align-items-center justify-content-center">
-                    <p class="text-muted">Unidad</p>
-                </div>
-                <div class="row d-flex align-items-center justify-content-center">
-                    <h3 id="cpu" class="text-muted pr-1">1</h3>
-                    <h3 class="text-primary">CPU</h3>
-                </div>
-                <div class="row d-flex align-items-center justify-content-center">
-                    <div class="btn-group btn-group-lg" role="group" aria-label="Basic example">
-                        <button onclick="restar_cpu()" type="button" class="btn btn-primary">-</button>
-                        <button onclick="sumar_cpu()" type="button" class="btn btn-primary">+</button>
-                      </div>
-                </div>
-            </div>
-        </div>
-        <div class="row pt-5">
-            <div class="col">
-                <div class="row d-flex align-items-center justify-content-center">
-                    <p class="text-muted">Gb</p>
-                </div>                
-                <div class="row d-flex align-items-center justify-content-center">
-                    <h3 id="ssd" class="text-muted pr-1">20</h3>  
-                    <h3 class="text-primary">SSD</h3>
-                </div>
-                <div class="row d-flex align-items-center justify-content-center">
-                    <div class="btn-group btn-group-lg" role="group" aria-label="Basic example">
-                        <button onclick="restar_ssd()" type="button" class="btn btn-primary">-</button>
-                        <button onclick="sumar_ssd()" type="button" class="btn btn-primary">+</button>
-                      </div>
-                </div>
-            </div>
-            <div class="col">  
-                <div class="row d-flex align-items-center justify-content-center">
-                    <p class="text-muted">24/h</p>
-                </div>    
-                <div class="row d-flex align-items-center justify-content-center">
-                    <h3 id="dias" class="text-muted pr-1">30</h3>
-                    <h3 class="text-primary">DIAS</h3>
-                </div>
-                <div class="row d-flex align-items-center justify-content-center">
-                    <div class="btn-group btn-group-lg" role="group" aria-label="Basic example">
-                        <button onclick="restar_dias()" type="button" class="btn btn-primary">-</button>
-                        <button onclick="sumar_dias()" type="button" class="btn btn-primary">+</button>
-                      </div>
-                </div>
-            </div>
-        </div>
+
+
     </div>
     <script src="./index.js"></script>
 </body>
