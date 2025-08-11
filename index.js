@@ -1,16 +1,22 @@
+function mbToGb(mb) {
+  return mb / 1024;
+}
 function restar_ram() {
-    let ram = Number(document.getElementById("ram").innerText) - 1;
+    let ram = Number(document.getElementById("ram").innerText) - 512;
     if (ram == 0) {
-        document.getElementById("ram").textContent = 1;
+        document.getElementById("ram").textContent = 512;
     } else {
         document.getElementById("ram").textContent = ram;
     }
     calcular_costo();
 }
 function sumar_ram() {
-    let ram = Number(document.getElementById("ram").innerText) + 1;
-    document.getElementById("ram").textContent = ram;
-    calcular_costo();
+    let ram = Number(document.getElementById("ram").innerText) + 512;
+
+    if (ram <= 16384) {
+        document.getElementById("ram").textContent = ram;
+        calcular_costo();
+    }
 }
 function restar_cpu() {
     let cpu = Number(document.getElementById("cpu").innerText) - 1;
@@ -62,7 +68,7 @@ function calcular_costo() {
     let ssd = Number(document.getElementById("ssd").innerText);
     let dias = Number(document.getElementById("dias").innerText);
 
-    let costo = (((cpu * 0.04) + (ram * 0.05) + (ssd * 0.01)) * 24) * dias;
+    let costo = (((cpu * 0.04) + (mbToGb(ram) * 0.05) + (ssd * 0.01)) * 24) * dias;
 
     document.getElementById("costo").textContent = costo.toFixed(2);
 
