@@ -74,12 +74,13 @@ function sumar_dias() {
 
 
 function desabilitar_y_activar_botones({
-    ram , cpu ,
+    ram , cpu , ssd
 }) {
     document.getElementById("sumar_ram").disabled = ram === 16384;
     document.getElementById("restar_ram").disabled = ram === 512;
     document.getElementById("sumar_cpu").disabled = cpu === 8;
     document.getElementById("restar_cpu").disabled = cpu === 1;
+    document.getElementById("restar_ssd").disabled = ssd === 20;
 }
 
 
@@ -89,7 +90,7 @@ function calcular_costo() {
     let ssd = Number(document.getElementById("ssd").innerText);
     let dias = Number(document.getElementById("dias").innerText);
 
-    desabilitar_y_activar_botones({ram , cpu});
+    desabilitar_y_activar_botones({ram , cpu , ssd});
 
     let costo = (((cpu * 0.04) + (mbToGb(ram) * 0.05) + (ssd * 0.01)) * 24) * dias;
 
