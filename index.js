@@ -71,8 +71,6 @@ function sumar_dias() {
     calcular_costo();
 }
 
-
-
 function desabilitar_y_activar_botones({
     ram , cpu , ssd
 }) {
@@ -82,7 +80,6 @@ function desabilitar_y_activar_botones({
     document.getElementById("restar_cpu").disabled = cpu === 1;
     document.getElementById("restar_ssd").disabled = ssd === 20;
 }
-
 
 function calcular_costo() {
     let ram = Number(document.getElementById("ram").innerText);
