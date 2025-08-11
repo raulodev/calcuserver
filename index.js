@@ -23,8 +23,10 @@ function restar_cpu() {
 }
 function sumar_cpu() {
     let cpu = Number(document.getElementById("cpu").innerText) + 1;
-    document.getElementById("cpu").textContent = cpu;
-    calcular_costo();
+    if (cpu <= 8) {
+        document.getElementById("cpu").textContent = cpu;
+        calcular_costo();
+    }
 }
 function restar_ssd() {
     let ssd = Number(document.getElementById("ssd").innerText) - 1;
